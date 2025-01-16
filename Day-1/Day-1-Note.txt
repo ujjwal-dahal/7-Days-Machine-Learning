@@ -1,0 +1,123 @@
+Machine Learning Pipeline
+
+1. Data Collection
+->
+
+Manual Data Collection : Survey
+Automated Data Collection : Web-Scraping
+Public Data Set : Kaggle
+APIs : Frontend ra Backend lai Connect garne Program
+Croud-Sourcing
+  
+2. Feature Engineering 
+
+Feature Transformation
+-> Missing Value ( Imputation )
+-> Categorical Features ( Label , One Hot )
+-> Outlier Detection 
+-> Feature Scaling ( Normalization , Standardization )
+: Z-Score bhaneko Mean = 0 & Standard Deviation = ?
+
+Feature Selections 
+:Remove White Pixel 
+Like Screen ma Pixel Pixel huncha ani Example Kunai Letter cha ani Tyo Letter naparne tyo screen ma pixel lai hataedine ani Letter part pareko pixel matra model lai dine
+
+
+3. Model Training
+
+Train-Test Split : Kati percent data train ma dine ani kati percet testing ma dine -> Major garne 80% Training & 20% Testing
+
+K-Fold Cross Validation : 
+Usuallly K ko value manually dine 5 or 10
+k=10 dida Dataset lai randomly 10 bhaag ma divide garcha
+ k = 10 huda 10 palta Iteraion huncha
+1st Iteration ma 1st Index chai Train ma jancha ani Baaki Test ma jancha
+2nd Iteration ma 2nd Index chai train ma jancha ani Baaku chai Test ma jancha Data
+
+
+Stratified K-Fold Cross Validation
+: Data haru equally distribute huncha esma jasle garda overfit hune chance kam huncha
+
+Bootstrap Samling
+: Naya dataset banaedincha tya bata randomly data tandicha Train ko laagi
+
+
+4. Model Evaluation
+
+a.Performace Matrices
+
+#Accuracy
+#Precision : Kati ota model le predict gareko data chai correct bhayo 
+#Recall : Kati ota model le correct gareko data chai prediction ma cha
+
+#F1 Score : Precision & Recall ko Harmonic Mean
+-> Esle chai Duitako Harmon mean lincha jasle garda Precision matra high or Recall matra high cha bhane Dataset naramro cha hai bhancha
+-> Correct above if I am wrong
+
+#Mean Squared Error
+
+
+b. Confusion Matrics
+-> TP   FP
+   FN   TN
+
+TP : True Positive -> Model le Predict Gareko  Value chai Actual Sanga True racha
+FP : False Positive
+FN : False Negative -> Model le Haina bhaneko Kura chai Actual ma Haina racha
+TN : True Negative -> Model le Haina bhaneko Data chai Actual ma Haina racha
+
+c. Baseline Comparision
+
+d. Bias-Variance Tradeoff
+
+#Underfit
+
+
+#Overfit
+-> Jun data ma Train gareko cha Tyo data dida chai Exact aaucha Output tara New data ma Predict garna sakdaina
+
+
+5. Model Deployment
+
+Hugging Face
+
+Streamlit
+
+
+6. Model Monitoring
+
+a. Data Drifting
+-> Example in Linear Regression : y = mx + c => Input ko value ma change huda Y ko value ma deflect(change huncha) huncha
+
+
+b. Concept Drift
+-> 
+
+c. Early Stop
+-> Overfitting huda Early Stop garcha
+
+
+
+
+
+#Types of Machine Learning
+
+1. Supervised Machine Learning
+-> Model lai Yo Input dida Yo Output aaucha bhanera suru ma Train garne Technique
+-> Model lai Input diyera yo Output aaucha bhanera Train garnu
+
+2. Unsupervised Machine Learning
+-> Example : Clustering
+
+3. Reinforcement Learning
+->  Esto kaam garda Model lai Reward huncha ani Esto kaam garda Fail huncha bhanera Train garne
+
+
+
+#Why Data ? 
+
+-> Jati besi Data huncha Teti Model le Train garcha
+
+ 
+#Web Scraping
+-> 

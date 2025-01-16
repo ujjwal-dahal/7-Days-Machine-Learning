@@ -1,0 +1,188 @@
+df.head()
+-> 1st ko file ko rows hernu cha bhane
+-> default ma 1st ko 5 ota rows dincha
+
+df.head(10)
+-> esle 10 ota data dincha 
+
+df.tail()
+-> esle last ko 5 ota rows dincha
+
+df.info()
+-> esle info dincha
+
+df.describe()
+-> descriptive statics generate garcha like mean , sd , quartile
+
+df.isnull()
+-> kun feature bhitra kati ota data empty cha dincha
+
+df.isnull.sum()
+-> esle kati ota features ma total kati ota data empty(null) cha dincha
+
+df.shape() 
+-> esle chai 2-D data dincha -> (rows , columns)
+-> Kati ota rows ra kati ota column cha dincha
+
+len(df)
+-> df ko length dincha
+
+
+
+#seaborn
+
+-> data lai visualize garna milcha
+
+import seaborn as sns
+
+1. sns.heatmap(df.null())
+-> esle heatmap() wala graph generate garcha jaha kun feature ma empty value cha
+
+2. sns.countplot() k ho?
+3. sns.distplot() k ho ?
+
+
+#Probability Topics
+1. Mean 
+2. Standard Deviation
+3. Medium
+4. Quartile 1 , 2 , 3
+5. Minimum value & Maximum Value
+
+-> Skeweness Graph 
+-> Bell Shaped Curve
+-> Left Skeweness & Right Skeweness Graph
+--> Skeweness cha bhane Outlier ni huncha
+
+
+
+#Box Plot
+mean -> sabai value ko total lai tini Haruko frequency le divide garne i.e average
+
+median -> sorted dataset ko middle ma parne data
+
+mode -> sab bhanda badi repeated data in dataset
+
+-> outlier huda median use garda better as mean use garda esle outlier lai pani sum garcha so accuracy kam aaucha
+
+--> outlier bhaneko dataset ma baheko ekdam different data i.e high value baheko data or ekdam lowest data
+
+# If no outlier, better to replace with mean
+# If outlier, better to replace with median
+# If distince cluster, use mode (outlier has more gap in between)
+
+
+-> mean_age = df["Age"].mean() --> esle Age column baheko sab value ko mean nikalcha
+
+df['Age'] = df['Age'].fillna(mean_age) --> esle chai Age column ma baheko null value lai mean_age le fill garcha
+
+
+-> df.drop("Cabin" , axis = 1 , inplace = True)
+
+axis = 1 le chai Mention gareko Column lai udaedincga "drop" le 
+axis = 0 le "row" hataedincha mention gareko row lai 
+
+inplace=True le original dataframe lai modify garcha
+
+
+-> df.dropna(subset=['Embarked'], inplace=True)
+Esle chai "Embarked" Column ma jun jun data null cha teslai remove garcha 
+
+#Outlier Detection
+
+
+Q1 = df['Age'].quantile(0.25)
+Q3 = df['Age'].quantile(0.75)
+IQR = Q3 - Q1
+
+lower_bound = Q1 - 1.5 * IQR
+upper_bound = Q3 + 1.5 * IQR
+
+
+# Technique to handle outliers
+# 1. Remove Outliers
+# 2. Floor the Outliers (Replace extreme outliers with the maximum or minimum value)
+# 3. Imputation (Replace with mean, median, mode)
+# If we know the bounded value and don't have outlier, use min max normalization else use z-score
+
+
+
+-> Encoding bhaneko text lai Number ma convert garnu 
+
+#Level Encoding
+
+from sklearn.preprocessing import LabelEncoder
+label_encoder = LabelEncoder()
+df['Sex'] = label_encoder.fit_transform(df['Sex'])
+
+-> Esle chai Data lai 0 , 1, 2, 3 esari replace garcha 
+
+Since machine le English language bujdaina so
+
+Example:
+
+gender ma female ra male cha bhane
+
+LevelEncoding le chai
+
+female lai 1 le and male lai 1 le represent garcha amd vice versa
+
+-> relation stablished bhako data ma chai level encoding use garda ramro
+
+#One Hot Coding
+
+-> Explain Your Self
+
+
+#Normalize garda jaile value 0 or 1 ko bich ma aaucha 
+
+#Correlation Matrix -> Euta feature le arko lai kasari affect gari racha
+
+-> Euta feature le arko feature lai kattiko impact gari racha bhanne ho
+
+negative value bhaneko chai inversely dependendent
+1 bhaneko highly dependent
+
+
+#Performing Prediction LogisticRegression
+
+from sklearn.linear_model import LogisticRegression
+logmodel = LogisticRegression()
+logmodel.fit(X_train, y_train)
+
+predicitions = logmodel.predict(X_test)
+
+
+#Analysing in confusion matrix
+
+from sklearn.metrics import confusion_matrix
+cm = confusion_matrix(y_test, predicitions)
+
+
+# plt.figure(figsize=(8, 6))
+sns.heatmap(cm, annot=True, xticklabels=['Not Survived', 'Survived'], yticklabels=['Not Survived', 'Survived'])
+
+plt.xlabel('Predicted Labels')
+plt.ylabel('True Labels')
+plt.title('Confusion Matrix')
+
+
+#Calculating Model's Accuracy
+
+from sklearn.metrics import accuracy_score, classification_report
+
+accuracy = accuracy_score(y_test, predicitions)
+
+
+#Display which feature has more contribution to the output
+
+
+
+#Classification ma chai Logistic , Random Forest use garincha
+
+
+#Macro average
+#weighted average
+
+
+
