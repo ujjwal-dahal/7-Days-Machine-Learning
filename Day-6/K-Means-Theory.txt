@@ -1,0 +1,30 @@
+K-Means is an unsupervised machine learning algorithm used for clustering data into groups. It finds patterns in data without needing labeled answers.
+
+How Does K-Means Work?
+Choose "K" (Number of Clusters)
+
+We decide how many clusters (groups) we want to divide the data into.
+Randomly Place "K" Centroids
+
+The algorithm picks "K" random points as the centers of the clusters. These points are called centroids.
+Assign Data Points to the Nearest Centroid
+
+Every data point is assigned to the closest centroid, forming clusters.
+Move Centroids to the Center of Assigned Points
+
+The centroids are re-calculated by taking the average position of all points in their cluster.
+Repeat Steps 3 & 4 Until Centroids Stop Moving
+
+The process continues until the centroids stop changing, meaning the clusters are stable.
+Example
+Imagine you have a bunch of fruit in a basket (apples, bananas, oranges) and you want to group them based on size and color. K-Means will automatically form K clusters based on similar features, grouping apples together, bananas together, and so on.
+
+Where is K-Means Used?
+Customer Segmentation (Grouping customers by behavior)
+Image Compression (Reducing colors in images)
+Anomaly Detection (Finding unusual patterns in data)
+Document Clustering (Grouping similar articles or texts)
+Limitations of K-Means
+Needs to know K in advance
+Doesn't work well if clusters have different shapes
+Sensitive to outliers (unusual data points)

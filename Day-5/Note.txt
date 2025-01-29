@@ -1,0 +1,87 @@
+Classification ma Hamilai Descrete data chaencha.
+
+Logistic Regression ma datapoint lai separate garne line banaune.
+
+Logistic regression predicts the output of a categorical dependent variable. Therefore, the outcome must be a categorical or discrete value.
+It can be either Yes or No, 0 or 1, true or False, etc. but instead of giving the exact value as 0 and 1, it gives the probabilistic values which lie between 0 and 1.
+In Logistic regression, instead of fitting a regression line, we fit an “S” shaped logistic function, which predicts two maximum values (0 or 1).
+
+
+Linear Regression + Signmoid Function is Logistic Regression
+
+Sigmoid Function le jaile pani output 0 ra 1 ko bich ma dincha
+
+
+-> Entropy is collection of information in the system
+
+From Informatin Theory , Information is directly proportional to probability
+so Information = Log(P)
+
+so Entropy ma Summission of 
+ P(i) * log(P(i)) huncha
+
+such that 
+ Cost Entropy ma chai Summission of ( y(i) Log(y cap (i))
+
+yaa actual value multiple by log of predict value  so Cost Entropy
+
+A cost function is a mathematical function that calculates the difference between the target actual values (ground truth) and the values predicted by the model.
+. Usually, the objective of a machine learning algorithm is to reduce the error or output of cost function.
+
+When it comes to Linear Regression, the conventional Cost Function employed is the Mean Squared Error.
+
+Plotting this specific error function against the linear regression model’s weight parameters results in a convex shape.
+
+Let’s consider the Mean Squared Error (MSE) as a cost function, but it is not suitable for logistic regression due to its nonlinearity introduced by the sigmoid function.
+
+The equation 
+1
+1
++
+e
+−
+z
+1+e 
+−z
+ 
+1
+​
+  is a nonlinear transformation, and evaluating this term within the Mean Squared Error formula results in a non-convex cost function. A non-convex function, have multiple local minima which can make it difficult to optimize using traditional gradient descent algorithms
+
+
+#Confusion Matrix in Machine Learning
+
+Actual Value True cha tara Predict gareko value False cha bhane it is False Negative
+Tara Actual Value False cha tara Predict gareko cha True bhane False Positive since True i.e Positive bhaneko predict is False
+
+Precision & Recall 
+
+F1-Score
+
+Overfitting
+ Underfititng
+
+-> Overfitting huda model ko complexitiy badaune
+-> Underfitting huda dataset lai badaune or complexitiy of model lai ghataune
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
